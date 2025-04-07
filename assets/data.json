@@ -1,0 +1,220 @@
+{
+  "lessons": [
+    {
+      "title": "The Big Bang Theory",
+      "gradeLevel": "Middle School",
+      "subject": "Science",
+      "duration": "45 minutes",
+      "modules": [
+        {
+          "title": "1. What is the Big Bang Theory?",
+          "content": "The Big Bang Theory explains the origin of the universe as starting from a single point and expanding over time.",
+          "image": "/assets/hackathon_images/bigbang.png",
+          "video": "https://www.youtube.com/watch?v=wNDGgL73ihY",
+          "keywords": [
+            "Big Bang",
+            "universe origin",
+            "expansion"
+          ]
+        },
+        {
+          "title": "2. Evidence for the Big Bang",
+          "content": "Scientists support the Big Bang Theory with evidence such as cosmic microwave background radiation and the redshift of galaxies.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "cosmic background",
+            "redshift",
+            "evidence"
+          ]
+        },
+        {
+          "title": "3. Timeline of the Universe",
+          "content": "This module covers the timeline from the Big Bang to the formation of galaxies, stars, and planets.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "timeline",
+            "galaxies",
+            "stars",
+            "planets"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Understanding Limits in Mathematics",
+      "gradeLevel": "High School / Intro College",
+      "subject": "Mathematics",
+      "duration": "45 minutes",
+      "modules": [
+        {
+          "title": "1. What is a Limit?",
+          "content": "A limit is a fundamental concept in calculus that describes the value a function approaches as the input approaches a certain value.",
+          "image": "hackathon_images/limits.png",
+          "video": "https://www.youtube.com/watch?v=riXcZT2ICjA",
+          "keywords": [
+            "limit",
+            "calculus",
+            "approaches",
+            "value"
+          ]
+        },
+        {
+          "title": "2. Limit Notation",
+          "content": "The limit of a function f(x) as x approaches a is written as lim x→a f(x).",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "notation",
+            "limit notation",
+            "lim"
+          ]
+        },
+        {
+          "title": "3. One-Sided Limits",
+          "subtopics": [
+            {
+              "title": "Left-Hand Limit",
+              "content": "The limit of a function as it approaches a value from the left side.",
+              "image": "",
+              "video": ""
+            },
+            {
+              "title": "Right-Hand Limit",
+              "content": "The limit of a function as it approaches a value from the right side.",
+              "image": "",
+              "video": ""
+            }
+          ],
+          "keywords": [
+            "left-hand limit",
+            "right-hand limit",
+            "one-sided limits"
+          ]
+        },
+        {
+          "title": "4. Limits at Infinity",
+          "content": "Limits can also describe the behavior of functions as x approaches infinity or negative infinity.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "infinity",
+            "limit at infinity"
+          ]
+        },
+        {
+          "title": "5. When Limits Do Not Exist",
+          "content": "A limit does not exist if the left-hand and right-hand limits are not equal, or if the function behaves erratically near the point.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "undefined",
+            "non-existent limits",
+            "discontinuity"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Introduction to Operating Systems",
+      "gradeLevel": "High School / Intro College",
+      "subject": "Computer Science",
+      "duration": "45 minutes",
+      "modules": [
+        {
+          "title": "1. What is an Operating System?",
+          "content": "An operating system (OS) is system software that manages hardware and software resources and provides services for computer programs.",
+          "image": "hackathon_images/os_structure.png",
+          "video": "https://www.youtube.com/watch?v=ACsLvXuaKxw",
+          "keywords": [
+            "Operating System",
+            "system software",
+            "computer management"
+          ]
+        },
+        {
+          "title": "2. Types of Operating Systems",
+          "subtopics": [
+            {
+              "title": "Batch Operating System",
+              "content": "Processes are batched together and executed without interaction from the user.",
+              "image": "",
+              "video": ""
+            },
+            {
+              "title": "Time-Sharing Operating System",
+              "content": "Allows multiple users to use the system simultaneously by sharing time slices.",
+              "image": "",
+              "video": ""
+            },
+            {
+              "title": "Real-Time Operating System",
+              "content": "Used for systems that require immediate processing and responses, such as embedded systems.",
+              "image": "",
+              "video": ""
+            }
+          ],
+          "keywords": [
+            "batch",
+            "time-sharing",
+            "real-time",
+            "types of OS"
+          ]
+        },
+        {
+          "title": "3. Functions of an Operating System",
+          "content": "Operating systems handle memory management, process scheduling, input/output control, file systems, and security.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "memory management",
+            "scheduling",
+            "file system",
+            "security"
+          ]
+        },
+        {
+          "title": "4. User Interfaces in OS",
+          "content": "OS provides command-line interface (CLI) and graphical user interface (GUI) for interaction with the system.",
+          "image": "",
+          "video": "",
+          "keywords": [
+            "CLI",
+            "GUI",
+            "user interface"
+          ]
+        },
+        {
+          "title": "5. Popular Operating Systems",
+          "subtopics": [
+            {
+              "title": "Windows",
+              "content": "Developed by Microsoft, widely used in personal and business computers.",
+              "image": "",
+              "video": ""
+            },
+            {
+              "title": "Linux",
+              "content": "An open-source OS used in servers, desktops, and embedded systems.",
+              "image": "",
+              "video": ""
+            },
+            {
+              "title": "macOS",
+              "content": "Developed by Apple, known for its smooth interface and tight hardware integration.",
+              "image": "",
+              "video": ""
+            }
+          ],
+          "keywords": [
+            "Windows",
+            "Linux",
+            "macOS",
+            "popular OS"
+          ]
+        }
+      ]
+    }
+  ]
+}
