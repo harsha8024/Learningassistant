@@ -157,12 +157,30 @@ class TOCScreen extends StatefulWidget {
 }
 
 class _TOCScreenState extends State<TOCScreen> {
-  List<dynamic> lessons = []; // Holds the lesson data loaded from JSON
+  List<dynamic> lessons = [];
+  List<dynamic> mcqs = []; // Add this line to store MCQ data
 
   @override
   void initState() {
     super.initState();
-    loadLessons(); // Load lesson data when the widget is first created
+    loadLessons();
+    loadMCQs(); // Add this line to load MCQ data
+  }
+
+  // Add this new method to load MCQ data
+  Future<void> loadMCQs() async {
+    try {
+      final String response = await rootBundle.loadString('assets/all_mcqs_combined.json');
+      final data = json.decode(response);
+      setState(() {
+        mcqs = data['mcqs'];
+      });
+    } catch (e) {
+      print('Error loading MCQs: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to load MCQ data.'))
+      );
+    }
   }
 
   // Asynchronously load lesson data from the JSON file in assets
