@@ -1,9 +1,11 @@
-import 'dart:convert'; // For json decoding
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // For rootBundle
-import 'package:webview_flutter/webview_flutter.dart'; // For WebViewWidget
+// ignore_for_file: prefer_const_constructors
 
-// Main Application Widget (Stateful)
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+// Main Application Widget (Stateful) - (No changes needed here for the font issue)
 class LearningApp extends StatefulWidget {
   @override
   _LearningAppState createState() => _LearningAppState();
@@ -13,19 +15,18 @@ class _LearningAppState extends State<LearningApp> {
   bool useOpenDyslexicFont = false;
   bool useHighContrast = false;
 
-  // Callback function to toggle the font state
   void _toggleFont() {
     setState(() {
       useOpenDyslexicFont = !useOpenDyslexicFont;
     });
   }
 
-  // Callback function to toggle the contrast state
   void _toggleContrast() {
     setState(() {
       useHighContrast = !useHighContrast;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +49,7 @@ class _LearningAppState extends State<LearningApp> {
             displayColor: Colors.white,
             fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null, // Apply font globally
           ).copyWith( // Customize specific text styles
+            // ignore: prefer_const_constructors
             titleLarge: TextStyle( // Used for main titles like lesson titles in ExpansionTile
               color: Colors.yellow,
               fontWeight: FontWeight.bold,
@@ -69,14 +71,14 @@ class _LearningAppState extends State<LearningApp> {
           ),
       // Define other theme properties like button themes if needed
       switchTheme: SwitchThemeData( // Style switches for consistency
-         thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
+         thumbColor: WidgetStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+              if (states.contains(WidgetState.selected)) {
                 return Colors.yellow; // Thumb color when switch is ON
               }
               return Colors.grey; // Thumb color when switch is OFF
             }),
-            trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
+            trackColor: WidgetStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+              if (states.contains(WidgetState.selected)) {
                 return Colors.yellow.withOpacity(0.5); // Track color when switch is ON
               }
               return Colors.grey.withOpacity(0.5); // Track color when switch is OFF
@@ -102,32 +104,78 @@ class _LearningAppState extends State<LearningApp> {
     );
 
     // Define the Light Theme
-    final lightTheme = ThemeData.light().copyWith(
-      appBarTheme: AppBarTheme( // Ensure AppBar looks good in light theme too
-          titleTextStyle: TextStyle( // Explicitly style AppBar title
-            color: ThemeData.light().primaryTextTheme.titleLarge?.color, // Use default color
-            fontSize: 20, // Example size
+final lightTheme = ThemeData.light().copyWith(
+       appBarTheme: AppBarTheme(
+          // Default background is light, ensure title text is dark
+          titleTextStyle: TextStyle(
+            // *** FIX: Explicit dark color for visibility ***
+            color: Colors.black,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
+            // Explicit font setting
             fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
           ),
+          // Optional: Set icon/action colors if needed
+          // foregroundColor: Colors.black,
       ),
-      textTheme: ThemeData.light().textTheme.apply( // Apply base light theme text colors
-            fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null, // Apply font globally
-          ).copyWith( // Customize specific text styles
-            bodyLarge: TextStyle(fontSize: 16, fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null),
-            titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null),
-            titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null),
-             // Define other styles if needed
+      textTheme: ThemeData.light().textTheme.apply(
+            // Base font setting
+            fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+          ).copyWith(
+            // --- Explicit Font Setting in Specific Styles ---
+            titleLarge: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+              // Explicit font setting
+              fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+            ),
+            titleMedium: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black54,
+              // Explicit font setting
+              fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+            ),
+            bodyLarge: TextStyle(
+              fontSize: 16,
+              color: Colors.black87,
+              // Explicit font setting *** ENSURED HERE ***
+              fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+            ),
+            bodyMedium: TextStyle(
+              fontSize: 14,
+              color: Colors.black87,
+              // Explicit font setting *** ENSURED HERE ***
+              fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+            ),
+            labelLarge: TextStyle( // Example for Button text
+               // Explicit font setting
+               fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+            ),
+            titleSmall: TextStyle( // Example if used
+                // Explicit font setting
+                fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+             ),
+             bodySmall: TextStyle( // Example (caption) if used
+                // Explicit font setting
+                fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null,
+             ),
           ),
-      // Define other light theme properties if needed
+      dialogTheme: DialogTheme(
+           // Explicit font settings for dialogs in light theme
+           titleTextStyle: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null),
+           contentTextStyle: TextStyle(color: Colors.black87, fontSize: 16, fontFamily: useOpenDyslexicFont ? 'OpenDyslexic' : null),
+      ),
+       // Define other light theme properties if needed
+       // switchTheme: SwitchThemeData(/* ... default or custom light switch colors ... */),
     );
 
     // Build the MaterialApp using the selected theme
     return MaterialApp(
       title: 'Accessible Learning Platform',
-      theme: useHighContrast ? highContrastTheme : lightTheme, // Apply the selected theme
-      home: TOCScreen( // Set the initial screen
-        // Pass down the state and toggle functions to the child widget
+      theme: useHighContrast ? highContrastTheme : lightTheme,
+      home: TOCScreen(
         toggleFont: _toggleFont,
         toggleContrast: _toggleContrast,
         useOpenDyslexicFont: useOpenDyslexicFont,
@@ -137,9 +185,9 @@ class _LearningAppState extends State<LearningApp> {
   }
 }
 
+
 // Table of Contents Screen Widget (Stateful)
 class TOCScreen extends StatefulWidget {
-  // State and callbacks passed from LearningApp
   final VoidCallback toggleFont;
   final VoidCallback toggleContrast;
   final bool useOpenDyslexicFont;
@@ -157,33 +205,30 @@ class TOCScreen extends StatefulWidget {
 }
 
 class _TOCScreenState extends State<TOCScreen> {
-  List<dynamic> lessons = []; // Holds the lesson data loaded from JSON
+  List<dynamic> lessons = [];
 
   @override
   void initState() {
     super.initState();
-    loadLessons(); // Load lesson data when the widget is first created
+    loadLessons();
   }
 
-  // Asynchronously load lesson data from the JSON file in assets
   Future<void> loadLessons() async {
-    try {
-      // Load the JSON file from the assets folder
-      // Make sure 'assets/data.json' exists and is declared in pubspec.yaml
+     try {
       final String response = await rootBundle.loadString('/data.json');
-      // Decode the JSON string into a Dart object
       final data = json.decode(response);
-      // Update the state with the loaded lessons
-      setState(() {
-        lessons = data['lessons'];
-      });
+      if (mounted) { // Check if the widget is still in the tree
+         setState(() {
+           lessons = data['lessons'];
+         });
+      }
     } catch (e) {
-      // Handle potential errors during file loading or JSON parsing
       print('Error loading lessons: $e');
-      // Optionally show an error message to the user
-      ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(content: Text('Failed to load lesson data.'))
-      );
+       if (mounted) { // Check if mounted before showing SnackBar
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text('Failed to load lesson data.'))
+           );
+       }
     }
   }
 
@@ -191,18 +236,14 @@ class _TOCScreenState extends State<TOCScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // The title style is now handled by the AppBarTheme in MaterialApp
-        title: Text('Table of Contents'),
+        title: Text('Table of Contents'), // Style comes from theme
         actions: [
-          // Settings button to open the accessibility dialog
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  // Show the accessibility settings dialog
-                  // Pass the current state and toggle functions down
                   return AccessibilitySettingsDialog(
                     useOpenDyslexicFont: widget.useOpenDyslexicFont,
                     useHighContrast: widget.useHighContrast,
@@ -216,31 +257,30 @@ class _TOCScreenState extends State<TOCScreen> {
         ],
       ),
       body: lessons.isEmpty
-      ? Center(child: CircularProgressIndicator()) // Show loading indicator while lessons load
+      ? Center(child: CircularProgressIndicator())
       : ListView.builder(
-        itemCount: lessons.length, // Number of lessons
+        itemCount: lessons.length,
         itemBuilder: (context, lessonIndex) {
           var lesson = lessons[lessonIndex];
           return ExpansionTile(
-            // Title style comes from theme's expansionTileTheme or textTheme.titleLarge
+            // *** REMOVED explicit style override ***
+            // The style now purely comes from the theme's ExpansionTileTheme or TextTheme.titleLarge
             title: Text(lesson['title']),
-            // Children are the modules within each lesson
             children: List.generate(lesson['modules'].length, (moduleIndex) {
               var module = lesson['modules'][moduleIndex];
-              // Determine the title for the module/subtopic
               String title = module['title'] ?? module['subtopics']?[0]['title'] ?? 'Untitled';
               return ListTile(
-                 // Title style comes from theme's listTileTheme or textTheme.titleMedium
+                // *** REMOVED explicit style override ***
+                // Style comes from theme's ListTileTheme or TextTheme.titleMedium
                 title: Text(title),
                 onTap: () {
-                  // Navigate to the LessonPage when a module is tapped
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (_) => LessonPage(
                         lessonTitle: lesson['title'],
                         module: module,
-                        // Pass accessibility settings to the LessonPage
+                        // Pass settings - LessonPage will use theme context
                         useHighContrast: widget.useHighContrast,
                         useOpenDyslexicFont: widget.useOpenDyslexicFont,
                       ),
@@ -255,6 +295,7 @@ class _TOCScreenState extends State<TOCScreen> {
     );
   }
 }
+
 
 // Accessibility Settings Dialog Widget (Stateful)
 class AccessibilitySettingsDialog extends StatefulWidget {
@@ -337,16 +378,13 @@ class _AccessibilitySettingsDialogState extends State<AccessibilitySettingsDialo
   }
 }
 
-
 // Lesson Page Widget (Stateless)
 class LessonPage extends StatelessWidget {
-  // Data and settings passed when navigating to this page
   final String lessonTitle;
   final Map<String, dynamic> module;
-  final bool useHighContrast;
-  final bool useOpenDyslexicFont;
+  final bool useHighContrast; // Still useful for conditional logic *other* than font
+  final bool useOpenDyslexicFont; // Still useful for conditional logic *other* than font
 
-  // Constructor
   LessonPage({
     required this.lessonTitle,
     required this.module,
@@ -356,106 +394,106 @@ class LessonPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Extract subtopics, handling null case
     final subtopics = module['subtopics'] as List<dynamic>?;
-    // Determine the title for the AppBar
     final String pageTitle = module['title'] ?? 'Lesson';
+
+    // Get the current theme's text styles ONCE for efficiency
+    final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       appBar: AppBar(
-        // Title style is handled by AppBarTheme set in MaterialApp
+        // *** REMOVED explicit style override ***
+        // Title style comes from the theme's AppBarTheme
         title: Text(pageTitle),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Padding around the content
-        child: ListView( // Use ListView to allow scrolling if content exceeds screen height
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
           children: [
-            // Display module content if available
+            // Display module content
             if (module['content'] != null)
               Padding(
-                 padding: const EdgeInsets.only(bottom: 16.0), // Space below content
+                 padding: const EdgeInsets.only(bottom: 16.0),
                  child: Text(
                   module['content'],
-                  // Use bodyLarge style from the current theme
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  // *** Use theme directly ***
+                  style: textTheme.bodyLarge,
                 ),
               ),
 
-            // Display module image if available
+            // Display module image
             if (module['image'] != null && module['image'].toString().isNotEmpty)
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0), // Space around image
-                // Load image from assets. Ensure path is correct and declared in pubspec.yaml
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Image.asset(module['image']),
               ),
 
-            // Display module video if available
+            // Display module video
             if (module['video'] != null && module['video'].toString().isNotEmpty)
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0), // Space around video
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: AspectRatio(
-                  aspectRatio: 16 / 9, // Standard video aspect ratio
-                  child: WebViewWidget(
+                  aspectRatio: 16 / 9,
+                  child: WebViewWidget( // WebView itself doesn't use Flutter text theme
                     controller: WebViewController()
-                      ..setJavaScriptMode(JavaScriptMode.unrestricted) // Enable JS for YouTube embeds
-                      ..setBackgroundColor(const Color(0x00000000)) // Optional: set background color
-                      ..loadRequest(Uri.parse(module['video'].replaceFirst('watch?v=', 'embed/'))), // Load YouTube embed URL
+                      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+                      ..setBackgroundColor(const Color(0x00000000))
+                      ..loadRequest(Uri.parse(module['video'].replaceFirst('watch?v=', 'embed/'))),
                   ),
                 ),
               ),
 
-            // Display subtopics if available
+            // Display subtopics
             if (subtopics != null)
-              // Use spread operator (...) to insert subtopic widgets directly into the list
-              ...subtopics.map((sub) => Padding( // Add padding around each subtopic block
-                 padding: const EdgeInsets.only(top: 20.0), // Space above each subtopic
+              ...subtopics.map((sub) => Padding(
+                 padding: const EdgeInsets.only(top: 20.0),
                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start, // Align content to the left
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Display subtopic title
+                      // Subtopic title
                       Text(
-                        sub['title'] ?? 'Subtopic', // Use default if title is missing
-                        // Use titleMedium style from the current theme
-                        style: Theme.of(context).textTheme.titleMedium,
+                        sub['title'] ?? 'Subtopic',
+                        // *** Use theme directly ***
+                        style: textTheme.titleMedium,
                       ),
-                      SizedBox(height: 8), // Space between title and content
+                      SizedBox(height: 8),
 
-                      // Display subtopic content if available
+                      // Subtopic content
                       if (sub['content'] != null)
                          Padding(
-                           padding: const EdgeInsets.only(bottom: 8.0), // Space below text
+                           padding: const EdgeInsets.only(bottom: 8.0),
                            child: Text(
-                            sub['content']!, // Assert non-null as we checked
-                            // Use bodyLarge style from the current theme
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            sub['content']!,
+                            // *** Use theme directly ***
+                            style: textTheme.bodyLarge,
                           ),
                          ),
 
-                      // Display subtopic image if available
+                      // Subtopic image
                       if (sub['image'] != null && sub['image'].toString().isNotEmpty)
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0), // Space around image
-                          child: Image.asset(sub['image']), // Load image from assets
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Image.asset(sub['image']),
                         ),
 
-                      // Display subtopic video if available
+                      // Subtopic video
                       if (sub['video'] != null && sub['video'].toString().isNotEmpty)
                          Padding(
-                           padding: const EdgeInsets.symmetric(vertical: 8.0), // Space around video
+                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                            child: AspectRatio(
                             aspectRatio: 16 / 9,
-                            child: WebViewWidget(
+                            child: WebViewWidget( // WebView itself doesn't use Flutter text theme
                               controller: WebViewController()
                                 ..setJavaScriptMode(JavaScriptMode.unrestricted)
                                 ..setBackgroundColor(const Color(0x00000000))
                                 ..loadRequest(Uri.parse(sub['video'].replaceFirst('watch?v=', 'embed/'))),
                             ),
-                                                 ),
+                           ),
                          ),
                     ],
                   ),
               )
-              ).toList(), // Convert the mapped iterable to a List
+              ).toList(),
           ],
         ),
       ),
