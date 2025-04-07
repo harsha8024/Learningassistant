@@ -1,0 +1,235 @@
+{
+  "mcqs": [
+    {
+      "topic": "The Big Bang Theory",
+      "questions": [
+        {
+          "id": "a24026d7-8ac0-4a25-b4d8-5f57aa60fe8e",
+          "question": "What is the Big Bang Theory??",
+          "options": [
+            "A fictional explanation unrelated to real facts.",
+            "A completely unrelated scientific phenomenon.",
+            "A process that has no relevance to the topic.",
+            "The Big Bang Theory explains the origin of the universe as starting from a single point and expanding over time."
+          ],
+          "correctAnswer": "The Big Bang Theory explains the origin of the universe as starting from a single point and expanding over time.",
+          "source": "1. What is the Big Bang Theory?"
+        },
+        {
+          "id": "5439a2a3-6999-4949-ab26-64eb6dc2a133",
+          "question": "What is Evidence for the Big Bang?",
+          "options": [
+            "A fictional explanation unrelated to real facts.",
+            "Scientists support the Big Bang Theory with evidence such as cosmic microwave background radiation and the redshift of galaxies.",
+            "A process that has no relevance to the topic.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "Scientists support the Big Bang Theory with evidence such as cosmic microwave background radiation and the redshift of galaxies.",
+          "source": "2. Evidence for the Big Bang"
+        },
+        {
+          "id": "b93d63de-3595-4aa7-b7bf-ffaf39c4215b",
+          "question": "What is Timeline of the Universe?",
+          "options": [
+            "An outdated concept disproven by modern science.",
+            "A completely unrelated scientific phenomenon.",
+            "A process that has no relevance to the topic.",
+            "This module covers the timeline from the Big Bang to the formation of galaxies, stars, and planets."
+          ],
+          "correctAnswer": "This module covers the timeline from the Big Bang to the formation of galaxies, stars, and planets.",
+          "source": "3. Timeline of the Universe"
+        }
+      ]
+    },
+    {
+      "topic": "Understanding Limits in Mathematics",
+      "questions": [
+        {
+          "id": "7a78e795-76ae-4d41-bf70-5d106e652126",
+          "question": "What is a Limit??",
+          "options": [
+            "A process that has no relevance to the topic.",
+            "A limit is a fundamental concept in calculus that describes the value a function approaches as the input approaches a certain value.",
+            "A fictional explanation unrelated to real facts.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "A limit is a fundamental concept in calculus that describes the value a function approaches as the input approaches a certain value.",
+          "source": "1. What is a Limit?"
+        },
+        {
+          "id": "105dd472-9b01-4ca2-a0e0-bfc464985bc2",
+          "question": "What is Limit Notation?",
+          "options": [
+            "The limit of a function f(x) as x approaches a is written as lim x\u2192a f(x).",
+            "An outdated concept disproven by modern science.",
+            "A process that has no relevance to the topic.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "The limit of a function f(x) as x approaches a is written as lim x\u2192a f(x).",
+          "source": "2. Limit Notation"
+        },
+        {
+          "id": "0cb5ff08-8524-411b-8094-b7c1ec5a0778",
+          "question": "What is Left-Hand Limit?",
+          "options": [
+            "A fictional explanation unrelated to real facts.",
+            "A completely unrelated scientific phenomenon.",
+            "A process that has no relevance to the topic.",
+            "The limit of a function as it approaches a value from the left side."
+          ],
+          "correctAnswer": "The limit of a function as it approaches a value from the left side.",
+          "source": "3. One-Sided Limits > Left-Hand Limit"
+        },
+        {
+          "id": "d89064ce-ee41-4192-99cb-516ee2ce7c8f",
+          "question": "What is Right-Hand Limit?",
+          "options": [
+            "An outdated concept disproven by modern science.",
+            "The limit of a function as it approaches a value from the right side.",
+            "A fictional explanation unrelated to real facts.",
+            "A process that has no relevance to the topic."
+          ],
+          "correctAnswer": "The limit of a function as it approaches a value from the right side.",
+          "source": "3. One-Sided Limits > Right-Hand Limit"
+        },
+        {
+          "id": "4aeab467-1e6e-4c04-8032-936ecfb28bdf",
+          "question": "What is Limits at Infinity?",
+          "options": [
+            "Limits can also describe the behavior of functions as x approaches infinity or negative infinity.",
+            "A completely unrelated scientific phenomenon.",
+            "A fictional explanation unrelated to real facts.",
+            "A process that has no relevance to the topic."
+          ],
+          "correctAnswer": "Limits can also describe the behavior of functions as x approaches infinity or negative infinity.",
+          "source": "4. Limits at Infinity"
+        },
+        {
+          "id": "bb46e3f5-8b29-452f-9b38-d2e1c7a1cf6d",
+          "question": "When Do Limits Not Exist?",
+          "options": [
+            "A limit does not exist if the left-hand and right-hand limits are not equal, or if the function behaves erratically near the point.",
+            "A process that has no relevance to the topic.",
+            "A fictional explanation unrelated to real facts.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "A limit does not exist if the left-hand and right-hand limits are not equal, or if the function behaves erratically near the point.",
+          "source": "5. When Limits Do Not Exist"
+        }
+      ]
+    },
+    {
+      "topic": "Introduction to Operating Systems",
+      "questions": [
+        {
+          "id": "5cadb5b5-36a1-4ac0-ada5-c94ab2008991",
+          "question": "What is an Operating System??",
+          "options": [
+            "A completely unrelated scientific phenomenon.",
+            "An operating system (OS) is system software that manages hardware and software resources and provides services for computer programs.",
+            "An outdated concept disproven by modern science.",
+            "A fictional explanation unrelated to real facts."
+          ],
+          "correctAnswer": "An operating system (OS) is system software that manages hardware and software resources and provides services for computer programs.",
+          "source": "1. What is an Operating System?"
+        },
+        {
+          "id": "4fe5086a-1fa4-436f-8aae-cb31d0af99d6",
+          "question": "What is Batch Operating System?",
+          "options": [
+            "A fictional explanation unrelated to real facts.",
+            "Processes are batched together and executed without interaction from the user.",
+            "An outdated concept disproven by modern science.",
+            "A process that has no relevance to the topic."
+          ],
+          "correctAnswer": "Processes are batched together and executed without interaction from the user.",
+          "source": "2. Types of Operating Systems > Batch Operating System"
+        },
+        {
+          "id": "f72f4249-3b98-4eae-9600-0b3d265118bc",
+          "question": "What is Time-Sharing Operating System?",
+          "options": [
+            "Allows multiple users to use the system simultaneously by sharing time slices.",
+            "A fictional explanation unrelated to real facts.",
+            "A process that has no relevance to the topic.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "Allows multiple users to use the system simultaneously by sharing time slices.",
+          "source": "2. Types of Operating Systems > Time-Sharing Operating System"
+        },
+        {
+          "id": "8c6ce29d-1f50-4eb4-a048-a075476c22fa",
+          "question": "What is Real-Time Operating System?",
+          "options": [
+            "An outdated concept disproven by modern science.",
+            "A completely unrelated scientific phenomenon.",
+            "Used for systems that require immediate processing and responses, such as embedded systems.",
+            "A process that has no relevance to the topic."
+          ],
+          "correctAnswer": "Used for systems that require immediate processing and responses, such as embedded systems.",
+          "source": "2. Types of Operating Systems > Real-Time Operating System"
+        },
+        {
+          "id": "a7a99823-0532-4b6b-a420-31421f3382fe",
+          "question": "What is Functions of an Operating System?",
+          "options": [
+            "Operating systems handle memory management, process scheduling, input/output control, file systems, and security.",
+            "An outdated concept disproven by modern science.",
+            "A process that has no relevance to the topic.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "Operating systems handle memory management, process scheduling, input/output control, file systems, and security.",
+          "source": "3. Functions of an Operating System"
+        },
+        {
+          "id": "242409df-386f-4c39-957b-a009b99c1713",
+          "question": "What is User Interfaces in OS?",
+          "options": [
+            "An outdated concept disproven by modern science.",
+            "OS provides command-line interface (CLI) and graphical user interface (GUI) for interaction with the system.",
+            "A completely unrelated scientific phenomenon.",
+            "A fictional explanation unrelated to real facts."
+          ],
+          "correctAnswer": "OS provides command-line interface (CLI) and graphical user interface (GUI) for interaction with the system.",
+          "source": "4. User Interfaces in OS"
+        },
+        {
+          "id": "a7e614a4-7cba-4543-aae1-7ce892ddda7a",
+          "question": "What is Windows?",
+          "options": [
+            "A completely unrelated scientific phenomenon.",
+            "A fictional explanation unrelated to real facts.",
+            "Developed by Microsoft, widely used in personal and business computers.",
+            "A process that has no relevance to the topic."
+          ],
+          "correctAnswer": "Developed by Microsoft, widely used in personal and business computers.",
+          "source": "5. Popular Operating Systems > Windows"
+        },
+        {
+          "id": "a840b937-0d10-483e-84d2-fa75eaa9baba",
+          "question": "What is Linux?",
+          "options": [
+            "A fictional explanation unrelated to real facts.",
+            "An outdated concept disproven by modern science.",
+            "An open-source OS used in servers, desktops, and embedded systems.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "An open-source OS used in servers, desktops, and embedded systems.",
+          "source": "5. Popular Operating Systems > Linux"
+        },
+        {
+          "id": "aa76499c-7261-4ae5-ba26-51f4a03140ac",
+          "question": "What is macOS?",
+          "options": [
+            "Developed by Apple, known for its smooth interface and tight hardware integration.",
+            "A process that has no relevance to the topic.",
+            "An outdated concept disproven by modern science.",
+            "A completely unrelated scientific phenomenon."
+          ],
+          "correctAnswer": "Developed by Apple, known for its smooth interface and tight hardware integration.",
+          "source": "5. Popular Operating Systems > macOS"
+        }
+      ]
+    }
+  ]
+}
